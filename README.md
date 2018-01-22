@@ -1,3 +1,6 @@
+# (minku1024) To make Japanese Tacotron with carpedm20's Multi-Speaker Tacotron in TensorFlow
+
+
 # Multi-Speaker Tacotron in TensorFlow
 
 TensorFlow implementation of:
