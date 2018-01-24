@@ -13,6 +13,7 @@ hyperparameter. Some cleaners are English-specific. You'll typically want to use
 
 import re
 from .korean import tokenize as ko_tokenize
+from .japanese import tokenize as jp_tokenize
 
 # Added to support LJ_speech
 from unidecode import unidecode
@@ -26,6 +27,13 @@ def korean_cleaners(text):
     '''Pipeline for Korean text, including number and abbreviation expansion.'''
     text = ko_tokenize(text)
     return text
+
+
+def japanese_cleaners(text):
+    '''Pipeline for Japanese text, including number and abbreviation expansion.'''
+    text = jp_tokenize(text)
+    return text
+
 
 
 # List of (regular expression, replacement) pairs for abbreviations:
