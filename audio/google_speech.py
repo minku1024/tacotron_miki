@@ -409,7 +409,7 @@ def get_text_from_audio(path):
             config = types.RecognitionConfig(
                 encoding=enums.RecognitionConfig.AudioEncoding.FLAC,
                 sample_rate_hertz=16000,
-                language_code='ko-KR')
+                language_code='ja-JP')
 
             response = client.recognize(config, audio)
             if len(response.results) > 0:

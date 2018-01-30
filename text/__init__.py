@@ -54,7 +54,6 @@ def _text_to_sequence(text, cleaner_names, as_token):
             List of integers corresponding to the symbols in the text
     '''
     sequence = []
-
     # Check for curly braces and treat their contents as ARPAbet:
     while len(text):
         m = _curly_re.match(text)
@@ -79,7 +78,7 @@ def sequence_to_text(sequence, skip_eos_and_pad=False, combine_jamo=False):
     cleaner_names=[x.strip() for x in hparams.cleaners.split(',')]
     if 'english_cleaners' in cleaner_names and isEn==False:
         convert_to_en_symbols()
-        
+
     result = ''
     for symbol_id in sequence:
         if symbol_id in _id_to_symbol:
@@ -92,7 +91,7 @@ def sequence_to_text(sequence, skip_eos_and_pad=False, combine_jamo=False):
                 result += s
 
     result = result.replace('}{', ' ')
-
+    print(result + "\n\n\n")
     if combine_jamo:
         return jamo_to_korean(result)
     else:
@@ -108,6 +107,9 @@ def _clean_text(text, cleaner_names):
         text = cleaner(text)
     return text
 
+
+def _symbols_to_sequence(symbols):
+    return [_symbol_to_id[s] for s in symbols if _should_keep_symbol(s)]
 
 def _symbols_to_sequence(symbols):
     return [_symbol_to_id[s] for s in symbols if _should_keep_symbol(s)]

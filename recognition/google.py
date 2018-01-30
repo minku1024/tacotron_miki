@@ -54,7 +54,7 @@ def text_recognition(path, config):
             config = types.RecognitionConfig(
                     encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
                     sample_rate_hertz=config.sample_rate,
-                    language_code='ko-KR')
+                    language_code='ja-JP')
 
             response = client.recognize(config, audio)
             if len(response.results) > 0:

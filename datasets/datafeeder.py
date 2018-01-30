@@ -33,7 +33,7 @@ def get_path_dict(
     path_dict = {}
     for data_dir in data_dirs:
         paths = glob("{}/*.npz".format(data_dir))
-
+        
         if data_type == 'train':
             rng.shuffle(paths)
 
@@ -44,16 +44,20 @@ def get_path_dict(
             min_n_frame = hparams.reduction_factor * hparams.min_iters
             max_n_frame = hparams.reduction_factor * hparams.max_iters - hparams.reduction_factor
             
+            
             new_items = [(path, n) for path, n, n_tokens in items \
                     if min_n_frame <= n <= max_n_frame and n_tokens >= hparams.min_tokens]
 
-            if any(check in data_dir for check in ["son", "yuinna"]):
+            if any(check in data_dir for check in ["son", "yuinna","miki"]):
                 blacklists = [".0000.", ".0001.", "NB11479580.0001"]
                 new_items = [item for item in new_items \
                         if any(check not in item[0] for check in blacklists)]
-
+        
+            
             new_paths = [path for path, n in new_items]
             new_n_frames = [n for path, n in new_items]
+            
+
 
             hours = frames_to_hours(new_n_frames)
 
