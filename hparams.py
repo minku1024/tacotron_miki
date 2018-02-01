@@ -15,7 +15,7 @@ basic_params.update({
     # Audio
     'num_mels': 80,
     'num_freq': 1025,
-    'sample_rate': 22000, # trained as 20000 but need to be 24000
+    'sample_rate': 24000, # trained as 20000 but need to be 24000
     'frame_length_ms': 50,
     'frame_shift_ms': 12.5,
     'preemphasis': 0.97,
@@ -25,7 +25,7 @@ basic_params.update({
 
 if True:
     basic_params.update({
-        'sample_rate': 22000, #originally 24000 (krbook), 22050(lj-data), 20000(others)
+        'sample_rate': 24000, #originally 24000 (krbook), 22050(lj-data), 20000(others)
     })
 
 basic_params.update({
@@ -78,7 +78,7 @@ if False: # Deep Voice 2 AudioBook Dataset
         'post_bank_channel_size': f(512),
         'post_rnn_size': f(256),
 
-        'reduction_factor': 5, # changed from 4
+        'reduction_factor': 4, # changed from 4
     })
 elif False: # Deep Voice 2 VCTK dataset
     basic_params.update({
@@ -136,7 +136,7 @@ basic_params.update({
     'ignore_recognition_level': 2, # 0: use all, 1: ignore only unmatched_alignment, 2: fully ignore recognition
 
     # Eval
-    'min_tokens': 3,#originally 50, 30 is good for korean,
+    'min_tokens': 4,#originally 50, 30 is good for korean,
     'min_iters': 10,
     'max_iters': 150,
     'skip_inadequate': False,

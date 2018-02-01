@@ -1,6 +1,13 @@
 logs/
 
-datasets/
+datasets/jpbible
+datasets/miki2
+datasets/miki
+datasets/son
+datasets/LJSpeech_1_0
 
 samples/
+
+web/
+
 

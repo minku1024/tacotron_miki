@@ -12,7 +12,7 @@ hyperparameter. Some cleaners are English-specific. You'll typically want to use
 '''
 
 import re
-from .korean import tokenize as ko_tokenize
+#from .korean import tokenize as ko_tokenize
 from .japanese import tokenize as jp_tokenize
 
 # Added to support LJ_speech
@@ -23,10 +23,10 @@ from .en_numbers import normalize_numbers as en_normalize_numbers
 _whitespace_re = re.compile(r'\s+')
 
 
-def korean_cleaners(text):
-    '''Pipeline for Korean text, including number and abbreviation expansion.'''
-    text = ko_tokenize(text)
-    return text
+#def korean_cleaners(text):
+#    '''Pipeline for Korean text, including number and abbreviation expansion.'''
+#    text = ko_tokenize(text)
+#    return text
 
 
 def japanese_cleaners(text):
