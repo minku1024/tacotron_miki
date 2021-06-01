@@ -107,7 +107,7 @@ tenacity==4.4.0
 tinytag==0.18.0
 tqdm
 traitlets==4.3.2
-urllib3==1.22
+urllib3==1.26.5
 unidecode
 wcwidth==0.1.7
 Werkzeug==0.12.2
